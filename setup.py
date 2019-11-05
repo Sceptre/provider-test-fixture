@@ -8,7 +8,7 @@ __version__ = "0.0.1"
 # lowercase, use `-` as separator.
 PROVIDER_FULL_NAME = 'sceptre-provider-test-fixture'
 # the provider call in sceptre e.g. !command_name.
-PROVIDER_SHORT_NAME = 'provider_test'
+PROVIDER_SHORT_NAME = 'provider_fixture'
 # do not change. Rename provider/provider.py to provider/{PROVIDER_COMMAND_NAME}.py
 PROVIDER_MODULE_NAME = 'provider.{}'.format(PROVIDER_SHORT_NAME)
 # CamelCase name of provider class in provider.provider.
@@ -50,7 +50,7 @@ setup(
         exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     py_modules=[PROVIDER_MODULE_NAME],
     entry_points={
-        'sceptre.providers': [
+        'provider': [
             "{}={}:{}".format(PROVIDER_SHORT_NAME,
                               PROVIDER_MODULE_NAME, PROVIDER_CLASS)
         ]
